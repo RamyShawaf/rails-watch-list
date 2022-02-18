@@ -1,7 +1,23 @@
-<ul>
-  <% @lists.each do |list| %>
-  <%= link_to list.name, list_path(list) %>
-  <% end %>
-</ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://c1.wallpaperflare.com/preview/570/413/91/interior-theatre-theater-empty-theater.jpg);">
+  <div class="container">
+    <h1 class="d-flex justify-content-center">Save any kind of movies</h1>
+    <p class="d-flex justify-content-center">classic</p>
+  </div>
+</div>
 
-<p><%= link_to "Create New List", new_list_path(@list) %></p>
+  <div class="d-flex justify-content-between m-3 p-3">
+    <h4>My Lists</h4>
+    <h4><%= link_to "Create a movie list", new_list_path(@list), class: "btn btn-success text-white" %></h4>
+  </div>
+
+
+
+
+
+<div class="cards m-3">
+  <% @lists.each do |list| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= link_to list.name, list_path(list), class: "nav-link text-white" %>
+    </div>
+  <% end %>
+</div>
